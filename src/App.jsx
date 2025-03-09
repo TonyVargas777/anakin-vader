@@ -1,19 +1,27 @@
-import { useState } from 'react'
 import 'two-up-element'
 import './App.css'
+import { useRef } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const audioRef = useRef(null)
+
+  const playAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.play()
+    }
+  }
 
   return (
     <>
-    <img src="star-wars-logo.jpg" alt="" />
       <two-up>
         <img src="cromo-anakin.jpg" alt="anakin" />
-        <img src="cromo-vader.jpg" alt="vader" />
+        <img src="obiwan.webp" alt="vader" />
       </two-up>
+      <button onClick={playAudio}>Reproducir música</button>
+      <audio ref={audioRef} src="Star Wars - Battle of the Heroes.mp3"></audio>
     </>
   )
 }
 
 export default App
+
