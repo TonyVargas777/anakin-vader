@@ -13,20 +13,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  height: 100dvh;
+}
+
 body {
-  margin: 0;
+  padding-top: 20px;
   display: flex;
   place-items: center;
   justify-content: center;
   min-width: 320px;
-  height: 100vh;
+  height: 80vh;
 }
 
 .box {
-  height: 90%;  
+  height: 100%;  
 }
 
  img{
   height: 100%;
-  size: fill  ;
+  size: cover;
+  object-fit: cover;
   }
